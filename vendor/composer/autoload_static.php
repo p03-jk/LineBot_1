@@ -4,11 +4,32 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInit443561a412b7c1b3399899586a4c9643
+class ComposerStaticInitfe1b759edc080e9c99fc7b93d09eed52
 {
+    public static $prefixLengthsPsr4 = array (
+        'J' => 
+        array (
+            'Jk\\Linebot\\' => 11,
+        ),
+    );
+
+    public static $prefixDirsPsr4 = array (
+        'Jk\\Linebot\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/src',
+        ),
+    );
+
+    public static $classMap = array (
+        'Composer\\InstalledVersions' => __DIR__ . '/..' . '/composer/InstalledVersions.php',
+    );
+
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
+            $loader->prefixLengthsPsr4 = ComposerStaticInitfe1b759edc080e9c99fc7b93d09eed52::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInitfe1b759edc080e9c99fc7b93d09eed52::$prefixDirsPsr4;
+            $loader->classMap = ComposerStaticInitfe1b759edc080e9c99fc7b93d09eed52::$classMap;
 
         }, null, ClassLoader::class);
     }
